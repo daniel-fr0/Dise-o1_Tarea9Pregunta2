@@ -34,6 +34,9 @@ Finalmente, como esto se quiere comparar con $\hat 0$, el problema se reduce a $
 - De ser cierto, podria ser que $B = A^-1$ con una probabilidad de $\frac{1}{2}$.
 - De ser falso, estamos seguros que $B \neq A^-1$.
 
+# Complejidad
+Como el algoritmo consiste en multiplicar un vector $1\times n$ y dos matrices $n\times n$, si se hace primero la multiplicación con el vector se tienen dos multiplicaciones en $O(n^2)$ y luego una comparación del vector $1\times n$ resultante con otro vector $1\times n$, lo cual es $O(n)$. Y para asegurar que el resultado permita una probabilidad de error de un cierto $\epsilon > 0$, se debe iterar el mismo procedimiento una cantidad $k = log\frac{1}{\epsilon}$, por lo tanto la complejidad en tiempo finalmente es de $O(n^2 log\frac{1}{\epsilon})$.
+
 # Implementacion
 Para implementar el algoritmo, se utilizó el generador de números aleatorios de la librería `random` de Python.
 
